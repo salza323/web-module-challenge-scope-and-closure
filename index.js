@@ -28,10 +28,15 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * counter1 uses closure 
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * counter1. Puts 2 functions together. Passing the "count" variable down. 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
+ * counter1 would be best when keeping a count going. counter2 may be best when adding a simgle number to an abstract number. Depending on value of count. 
 */
 
 // counter1 code
@@ -56,11 +61,16 @@ function counter2() {
 
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+function inning(){
+  let runs =  Math.floor(Math.random() * 3)
+  console.log(runs);
+  return runs
 }
+console.log(inning);
+
+
+
+
 
 /* Task 3: finalScore()
 
@@ -76,11 +86,16 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(inning, length){
+let score = {
+  homeTeam : inning() * length, 
+  awayTeam : inning() * length
 }
+return score
+}
+
+console.log(finalScore(inning, 9));
+
 
 /* Task 4: 
 
@@ -102,6 +117,14 @@ and returns the score at each pont in the game, like so:
 9th inning: awayTeam - homeTeam
 Final Score: awayTeam - homeTeam */
 
+
+function getInningScore(inning){
+  let innings = []
+  for (let i = 0; i < inning.length; i++){
+    let homeScore = inning[i].homeTeam
+    let awayScore = inning[i].awayTeam
+  }
+}
 
 function scoreboard(/* CODE HERE */) {
   /* CODE HERE */
